@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+        <title>Login y Registro</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left-container">
+                <form class="theform" method="POST" action="/nuevo/usuario">
+                <h3 class="title-1"><label> Registrarse</label></h3>
+                <div class="errors-box{% if get_flashed_messages(category_filter=['error_nombre', 'error_apellido', 'error_email', 'error_contraseña']) %} has-errors{% endif %}">
+                    {% for mensaje in get_flashed_messages(category_filter=['error_nombre']) %}
+                        <p>{{ mensaje }}</p>
+                    {% endfor %}
+                    {% for mensaje in get_flashed_messages(category_filter=['error_apellido']) %}
+                        <p>{{ mensaje }}</p>
+                    {% endfor %}
+                    {% for mensaje in get_flashed_messages(category_filter=['error_email']) %}
+                        <p>{{ mensaje }}</p>
+                    {% endfor %}
+                    {% for mensaje in get_flashed_messages(category_filter=['error_contraseña']) %}
+                        <p>{{ mensaje }}</p>
+                    {% endfor %}
+                </div>
+                <div class="input-con">
+                    <ul>
+                        <li>Nombre:</li>
+                        <input for="nombre" type="text" name="nombre">
+                        
+                        <li>Apellido:</li>
+                        <input for="apellido" type="text" name="apellido">
+                        
+                        <li>Email:</li>
+                        <input for="email" type="text" name="email">
+                        
+                        <li>Contraseña:</li>
+                        <input for="contraseña" type="password" name="contraseña">
+                        
+                        <li>Confirmación contraseña:</li>
+                        <input for="confirmar_contraseña" type="password" name="confirmar_contraseña">
+                        
+                        <li> <button class="btn-1" type="submit">Enviar</button></li>
+                    </ul>
+                </div>
+                </form>
+            </div>
+            <div class="right-container">
+                <form class="theform" method="POST" action="/login">
+                    <h3 class="title-2"><label> Login</label></h3>
+                    <div class="errors-box">
+                        {% for mensaje in get_flashed_messages(category_filter=['error_email_login']) %}
+                            <p>{{ mensaje }}</p>
+                        {% endfor %}
+                        {% for mensaje in get_flashed_messages(category_filter=['error_contraseña_login']) %}
+                            <p>{{ mensaje }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="input-con">
+                        <ul>
+                            <li>Email:</li>
+                            <input for="email_login" type="text" name="email_login">
+                            
+                            <li>Contraseña:</li>
+                            <input for="contraseña_login" type="password" name="contraseña_login">
+                            
+                            <li> <button class="btn-2" type="submit">Enviar</button></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

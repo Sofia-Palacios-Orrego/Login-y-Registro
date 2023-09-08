@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-container, .right-container {
+    background-color: rgb(62, 70, 70);
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 20px;
+    width:300px;
+
+}
+
+.first-sub-container {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+
+}
+
+
+.title-1 {
+    color: darkblue;
+}
+
+.title-2 {
+    color: green;
+}
+
+.btn-1{
+    background-color: darkblue;
+    color: white;
+    border: 2px;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.btn-2{
+    background-color: green;
+    color: white;
+    border: 2px;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.btn-3{
+    background-color:aqua;
+    color: white;
+    border: 2px;
+    border-radius: 2px;
+    padding: 10px;
+
+}
+
+
+.errors-box {
+    background-color: lightsalmon;
+    color: darkred;
+    border: solid black 0px;
+    transition: border-width 0.3s;
+}
+
+.errors-box.has-errors {
+    border-width: 2px; /* Set the desired border width when there are error messages */
+}
+
+
+ul{
+    list-style: none;
+    padding-left: 0px;
+    line-height: 2.0; /* Ajusta este valor según tus preferencias */
+}
+
+input {
+    width: 96%;
+}
